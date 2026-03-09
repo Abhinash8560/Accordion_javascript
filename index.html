@@ -37,21 +37,18 @@
         header.addEventListener('click',()=>{
           const content=header.nextElementSibling;
           const icon = header.querySelector('.icon');
-
+    const isOpen = content.style.display === 'block';
             document.querySelectorAll('.content').forEach(c => {
           c.style.display = 'none';
         });
         document.querySelectorAll('.icon').forEach(i => {
           i.textContent = '+'; 
         });
-          
-          if(content.style.display=== 'block'){
-            content.style.display='none';
-           icon.textContent = '+';
-          }else {
-            content.style.display='block';
-            icon.textContent = '-';
-          }
+       
+             if (!isOpen) {
+      content.style.display = 'block';
+      icon.textContent = '-';
+    }
         })
       })
 
